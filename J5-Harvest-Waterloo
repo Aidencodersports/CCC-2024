@@ -1,0 +1,44 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int collection (int x, int y, vector< vector <string> > harvest) {
+  if (x < 0 ||)
+}
+
+int main() {
+  int rows = 0;
+  int columns = 0;
+
+  cin >> rows >> columns;
+
+  vector< vector<string> > harvest;
+
+  for (int i = 0; i < rows; i++) {
+    string input;
+    cin >> input;
+    vector<string> row;
+    for (int j = 0; j < input.length(); j++) {
+      string item = input.substr(j, 1);
+      row.push_back(item);
+    }
+    harvest.push_back(row);
+  }
+
+  int farmerRow = 0;
+  int farmerColumn = 0;
+
+  cin >> farmerRow >> farmerColumn;
+
+  bool active = true;
+
+  while (active == true) {
+    if (farmerRow == 0) {
+      
+    }
+  }
+
+  
+
+  cout << harvest[2][5];
+}
