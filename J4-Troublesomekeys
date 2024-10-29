@@ -1,0 +1,56 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+  string normal;
+  string troublesome;
+  string silly;
+  string missing;
+  string quiet;
+
+  cin >> normal >> troublesome;
+
+  if (normal.length() == troublesome.length()) {
+    for (int i = 0; i < normal.length(); i++) {
+      if (normal[i] != troublesome[i]) {
+          missing = normal[i];
+          silly = troublesome[i];
+      }
+    }
+    cout << missing << " " << silly << endl;
+    cout << "-";
+  } else {
+
+  for (char letter = 'a'; letter <= 'z'; letter++) {
+    string copy = "";
+    bool working = true;
+    pair<char, char> trouble = {0, 0};
+    for (int i = 0; i < normal.length(); i++) { //makes the copy
+      if (normal[i] != letter) {
+        copy += normal[i];
+      }    
+    }
+
+    for (int i = 0; i < normal.length(); i++) {
+      if (copy[i] != troublesome[i]) {
+        if (trouble.first == 0) {
+          trouble.first = copy[i];
+          trouble.second = troublesome[i];
+        } else {
+          if (trouble.first != copy[i]) {
+            working = false;
+            break;
+          }
+        }
+      }
+    
+    }
+
+    if (working == true) {
+      cout << trouble.second << " " << trouble.first << endl;
+      cout << letter;
+    }
+  }
+}
+}
